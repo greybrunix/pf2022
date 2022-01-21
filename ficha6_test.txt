@@ -6,4 +6,5 @@ let searchtree = Node 4 (Node 2 Empty Empty) (Node 6 Empty Empty)
 let classOne = Node (1999, "ahs", STD, Aprov 20) Empty Empty
 let classTwo = Node (1999, "ahs", STD, Aprov 20) (Node (550,"Kyle",STD,Aprov 20) Empty Empty) (Node (96544,"Bruno",STD,Aprov 20) Empty Empty) 
 let classThree = Node (1999, "ahs", SW, Aprov 20) (Node (550,"Kyle",SW,Aprov 20) Empty Empty) (Node (96544,"Bruno",SW,Aprov 20) Empty Empty) 
-let classFour = Node (1999, "ahs", SW, Aprov 20) (Node (550,"Kyle",SW,Missed) Empty Empty) (Node (96544,"Bruno",SW,Rep) Empty Empty) 
+let classFour = Node (1999, "ahs", SW, Aprov 20) (Node (550,"Kyle",SW,Missed) Empty Empty) (Node (96544,"Bruno",SW,Rep) Empty Empty)
+let classFive = Node (1999, "ahs", STD, Aprov 20) (Node (550,"Kyle",STD,Aprov 10) Empty Empty) (Node (96544,"Bruno",STD,Aprov 15) Empty Empty)
