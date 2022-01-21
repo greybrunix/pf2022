@@ -60,5 +60,50 @@ minWmin (Node n l r) = (m, Node n ln r)
                       where
                           (m, ln) = minWmin l
 
-remove :: Ord a => a -> BTree a -> BTree a
-remove Empty = error"No empty trees"
+--remove :: Ord a => a -> BTree a -> BTree a
+--remove Empty = error"No empty trees"
+
+-- 3
+type Student = (Number, Name, Type, Grade)
+type Number = Int
+type Name = String
+data Type = STD | SW | IMP deriving Show
+data Grade = Aprov Int
+       | Rep
+       | Missed
+   deriving Show
+type Class = BTree Student -- Binary Search Tree (ordered by number)
+
+inscNumCheck :: Number -> Class -> Bool
+inscNumCheck _ Empty = False
+inscNumCheck x (Node (n,_,_,_) l r) = x == n || inscNumCheck x (if x > n then r else l)
+
+
+inscNameCheck :: Name -> Class -> Bool
+inscNameCheck _ Empty = False
+inscNameCheck x (Node(_,n,_,_) l r) = x == n || (inscNameCheck x l || inscNameCheck x r)
+
+studWork :: Class -> [(Number, Name)]
+studWork Empty = []
+studWork (Node (n,name,t,_) l r) = (case t of SW -> [(n,name)];otherwise -> []) ++ studWork l ++ studWork r
+
+grade :: Number -> Class -> Maybe Grade -- if not in class then Nothing
+grade _ Empty = Nothing
+grade x (Node (n,_,_,g) l r) = if x == n then Just g else (if x > n then grade x r else grade x l) 
+
+
+percMissed :: Class -> Float
+percMissed Empty = 0
+percMissed (Node n l r) = (countMissed (Node n l r)/countStud (Node n l r)) *100
+                where
+                   countMissed Empty = 0
+                   countMissed (Node (_,_,_,g) l r) = (case g of Missed -> 1;_ -> 0) + countMissed l + countMissed r
+                   countStud Empty = 0
+                   countStud (Node _ l r) = 1 + countStud l + countStud r
+
+--avrgAprov :: Class -> Float
+--avrgAprov Empty = 0
+--avrgAprov (Node n l r) 
+
+--AprovPerGraded :: Class -> Float -- ratio of students that passed by graded studens only one passing of the tree
+
