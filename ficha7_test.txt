@@ -1,0 +1,11 @@
+let expIntOne = Sum (Const 3) (Sub (Const 2) (Const 5))
+
+let roseTreeOne = R 0 [R 2 [],R 4 [R 9 [R 8 [], R 2 []], R 10 []],R 15 [],R 16 []]
+
+let lTreeOne = Fork (Fork (Tip 5) (Fork (Tip 6) (Tip 4))) (Tip 9)
+let bTreeOne = Node 5 (Node 3 Empty (Node 4 Empty Empty)) (Node 8 (Node 6 Empty (Node 7 Empty Empty)) (Node 9 Empty Empty))
+
+let bTreeTwo = Node 5 (Node 2 Empty Empty) (Node 7 Empty Empty)
+let lTreeTwo = Fork (Fork (Tip 1) (Tip 3)) (Fork (Tip 6) (Tip 9))
+
+let ftreeOne = Vertex 5 (Vertex 2 (Leaf 1) (Leaf 3)) (Vertex 7 (Leaf 6) (Leaf 9))
