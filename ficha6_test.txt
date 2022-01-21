@@ -1,0 +1,4 @@
+let treeTwo = Node 5 (Node 4 (Node 8 Empty (Node 6 Empty Empty)) Empty) (Node 19 (Node 10 (Node 5 Empty (Node 7 Empty Empty)) Empty) (Node 26 (Node 15 Empty Empty) Empty))
+let treeOne = Node 5 (Node 2 Empty Empty) (Node 4 Empty Empty) 
+
+let searchtree = Node 4 (Node 2 Empty Empty) (Node 6 Empty Empty)
