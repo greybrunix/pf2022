@@ -49,7 +49,6 @@ count n p = length $ filter (\x -> n == snd x) p
 deg :: Polynomial -> Int
 deg = foldl (\acc x-> if acc > snd x then acc else snd x) 0
 
-
 deriv :: Polynomial -> Polynomial
 deriv p = filter (/= (0,0)) $ map(\(b,e) -> if e >= 1 then (b * fromIntegral(e), e - 1) else (0,0)) p
 
@@ -59,5 +58,15 @@ calculate x = foldl (\acc (c,e) -> acc + c * (x^e)) 0
 simp :: Polynomial -> Polynomial
 simp p = filter (\(b,_) -> b /= 0) p
 
+mult :: Monomial -> Polynomial -> Polynomial
+mult (cx,ex) = map(\(c,e) -> (cx*c,e+ex))
 
+-- etc etc
+
+-- HOF over Matrices
+
+type Mat a = [[a]]
+
+dimOK :: Mat a -> Bool
+dimOK m = 
 
