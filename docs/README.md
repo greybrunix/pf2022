@@ -8,4 +8,4 @@ This is an educational repository, the point of this is to learn haskell/the ins
 
 In other words, I do not care what you do with this repository, but I will not be held accountable for any bad faith on the part of any user.
 
-As such this repository will be under the protection of the MIT License, for further understanding of this, read the License file in the same folder as this file
+As such this repository will be under the protection of the MIT License, for further understanding of this License, read the License file in the same folder as this file
