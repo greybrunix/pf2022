@@ -61,6 +61,35 @@ concat' (x:xs) = (aux [] x) ++ concat' xs
                 where aux acc []     = acc
                       aux acc (h:[]) = acc ++ [h]
                       aux acc (h:t)  = aux (acc ++ [h]) t
+
+inits' :: [a] -> [[a]]
+inits' [] = [[]]
+inits' (x:xs) = []:aux x (inits' xs)
+                where aux _ [] = []
+                      aux n (x:xs) = (n:x):(aux n xs)
+tails' :: [a] -> [[a]]
+tails' [] =  [[]]
+tails' l = l: tails'(tail l)
+
+heads :: [[a]] -> [a]
+heads [] = []
+heads ([]:xss) = heads xss
+heads ((x:xs):xss) = x:heads xss
+
+total :: [[a]] -> Int
+total [] = 0
+total [[]] = 0
+total (x:xs) = aux x + total xs
+               where aux [] = 0
+                     aux (x:xs) = 1 + aux xs
+
+powerEnumFrom :: Int -> Int -> [Int]
+powerEnumFrom _ 1 = [1]
+powerEnumFrom n m = 
+
+
+
+
 delete' :: Eq a => a -> [a] -> [a]
 delete' _ [] = []
 delete' x (h:t)
