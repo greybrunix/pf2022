@@ -30,10 +30,11 @@ deleteBy' :: (a -> a -> Bool) -> a -> [a] -> [a]
 deleteBy' _ _ [] = []
 deleteBy' f n (x:xs)  = if f n x then xs
                         else x:(deleteBy' f n xs)
-
-sortOn' :: (Ord a, Ord b) => (a -> b) -> [a] -> [a]
-sortOn' _ []     = []
-sortOn' f (x:xs) = insert x (sortOn' f xs)
+sortOn' :: Ord b => (a -> b) -> [a] -> [a]
+sortOn' _ [] = []
+sortOn' f (x:xs) = insert' x (sortOn' f xs)
+  where insert' x [] = [x]
+        insert' x (a:b) = if f x > f a then a:insert x b else x:a:b
 
 -- HOF over R[x]
 
