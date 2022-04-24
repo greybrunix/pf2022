@@ -11,7 +11,7 @@ As such this repository will be under the protection of the MIT License, for fur
 
 ## 8-bits of Syntax help
 '$' are a sort of "stand-in" for redundant parenthesis and '.' are used to chain functions, for example
-show (1 + 1) is recieving a function and two integers and returning a string, thus we rewrite this as  $ show $ 1 + 1
+show (1 + 1) is receiving a function and two integers and returning a string, thus we rewrite this as  $ show $ 1 + 1
 now let us, from this return a IO (), then let us do putStrLn (show (1+1)), following what was said we can replace with putStrLn (show $ 1+1) and that with putStrLn . show $ 1+1
 this isn't something that is used a lot, nor is it actually considered desirable, but sometimes it might be better for simplying your code ❤️
 
